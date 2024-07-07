@@ -1,0 +1,499 @@
+{
+	"info": {
+		"_postman_id": "709bab6b-97f1-4401-8909-bbfde357fb92",
+		"name": "SwaggerPetstore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pet",
+			"item": [
+				{
+					"name": "Add new pet",
+					"id": "0a8fed2b-5395-4e9d-adbb-389a1f310f1c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 9223372036854663099,\n        \"category\": {\n            \"id\": 85042688,\n            \"name\": \"dog\"\n        },\n        \"name\": \"Spooky\",\n        \"photoUrls\": [\n            \"http://foo.bar.com/1\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 3896559439,\n                \"name\": \"blank\"\n            }\n        ],\n        \"status\": \"pending\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://petstore.swagger.io/v2/pet"
+					},
+					"response": []
+				},
+				{
+					"name": "Find pets by status",
+					"id": "e3109a42-19f1-4bf0-a3c7-09de45936bec",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet/findByStatus?status=pending",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pet",
+								"findByStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "pending"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Pets by ID",
+					"id": "6ef82d07-5266-4edc-9c1e-bd509d4cf01f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://petstore.swagger.io/v2/pet/9223372036854663099"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a pet",
+					"id": "3f59858d-ad72-460e-a18e-a44ce4b14ade",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 9223372036854663099,\n        \"category\": {\n            \"id\": 85042688,\n            \"name\": \"dog\"\n        },\n        \"name\": \"Porky\",\n        \"photoUrls\": [\n            \"http://foo.bar.com/1\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 3896559439,\n                \"name\": \"blank\"\n            }\n        ],\n        \"status\": \"pending\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pet"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Porky",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "sold",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a pet",
+					"id": "7fc9076e-5bd4-4008-9d92-19e5d9229d9c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://petstore.swagger.io/v2/pet/9223372036854663099"
+					},
+					"response": []
+				}
+			],
+			"id": "5537d290-4bf4-48f3-9fff-5980feb12779"
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create user list",
+					"id": "b44ff97e-b711-4485-a1ce-c377108c542e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"id\": 1,\n    \"username\": \"HarryPotter\",\n    \"firstName\": \"Harry\",\n    \"lastName\": \"Potter\",\n    \"email\": \"potter@gmail.com\",\n    \"password\": \"qwerty\",\n    \"phone\": \"+15138384704\",\n    \"userStatus\": 1\n  },\n  {\n    \"id\": 2,\n    \"username\": \"LordVoldemort\",\n    \"firstName\": \"Lord\",\n    \"lastName\": \"Voldemort\",\n    \"email\": \"Voldemort@gmail.com\",\n    \"password\": \"qwerty\",\n    \"phone\": \"+15138384666\",\n    \"userStatus\": 1\n  }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://petstore.swagger.io/v2/user/createWithList"
+					},
+					"response": []
+				},
+				{
+					"name": "Create user",
+					"id": "af2bede9-8936-46ae-ba93-c27c87ca516c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"username\": \"HarryPotter\",\n    \"firstName\": \"Harry\",\n    \"lastName\": \"Potter\",\n    \"email\": \"potter@gmail.com\",\n    \"password\": \"qwerty\",\n    \"phone\": \"+15138384704\",\n    \"userStatus\": 1\n}\n  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://petstore.swagger.io/v2/user"
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by user name",
+					"id": "4db1c87a-4194-4a1c-b6c7-f7dc15954ab9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "https://petstore.swagger.io/v2/user/HarryPotter"
+					},
+					"response": []
+				},
+				{
+					"name": "Logs user into the system",
+					"id": "302ad758-275e-4eea-a8dc-be877b626964",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/user/login?username=HarryPotter&password=qwerty",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"user",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "HarryPotter"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "text"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"id": "2b3eeaf3-f362-46e5-ab27-62b97ea6e61e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"username\": \"HarryPotter\",\n    \"firstName\": \"Harry2\",\n    \"lastName\": \"Potter2\",\n    \"email\": \"harry@gmail.com\",\n    \"password\": \"qwerty\",\n    \"phone\": \"+15138384705\",\n    \"userStatus\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://petstore.swagger.io/v2/user/HarryPotter"
+					},
+					"response": []
+				},
+				{
+					"name": "Check user after update",
+					"id": "f01b4992-df38-43a1-b865-558cc3e19b73",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "https://petstore.swagger.io/v2/user/HarryPotter"
+					},
+					"response": []
+				},
+				{
+					"name": "Logs out current logged in user session",
+					"id": "50cc8436-ccc9-429c-afc3-a15e85f80fd0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "https://petstore.swagger.io/v2/user/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"id": "bc396ac7-9b98-460a-b9b3-f3cd5e223c5e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"username\": \"HarryPotter2\",\n    \"firstName\": \"Harry\",\n    \"lastName\": \"Potter\",\n    \"email\": \"potter@gmail.com\",\n    \"password\": \"qwerty\",\n    \"phone\": \"+15138384704\",\n    \"userStatus\": 1\n}\n  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://petstore.swagger.io/v2/user/HarryPotter"
+					},
+					"response": []
+				}
+			],
+			"id": "9914d3bf-2a52-48c2-b691-a7deecddaaf6"
+		},
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "Place an order for a pet",
+					"id": "731bab23-820b-4ff6-b795-32c7b06f253b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1111,\n  \"petId\": 12,\n  \"quantity\": 2,\n  \"shipDate\": \"2024-07-05T16:52:45.072Z\",\n  \"status\": \"placed\",\n  \"complete\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://petstore.swagger.io/v2/store/order"
+					},
+					"response": []
+				},
+				{
+					"name": "Access to Petstore orders",
+					"id": "e22a579c-5201-478a-abc3-4479d3a3b657",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://petstore.swagger.io/v2/store/inventory"
+					},
+					"response": []
+				},
+				{
+					"name": "Find purchase order by ID",
+					"id": "71852120-6889-4f9f-baa9-38efac9ecd10",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://petstore.swagger.io/v2/store/order/1111"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete purchase order by ID",
+					"id": "b65c09e5-515e-4997-8a0b-4514d5f9a494",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://petstore.swagger.io/v2/store/order/1111"
+					},
+					"response": []
+				}
+			],
+			"id": "ea10d5e9-43df-4990-9dfd-d2952e5d4424"
+		}
+	]
+}
