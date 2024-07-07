@@ -9,53 +9,6 @@
 			"name": "Pet",
 			"item": [
 				{
-					"name": "Add new pet",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "4061eb16-dc86-4cea-a67c-ada180cea357",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"var jsonData = pm.response.json()",
-									"//console.log(jsonData.id)",
-									"pm.environment.set(\"petId\", jsonData.id);",
-									"pm.environment.set(\"petName\", jsonData.name);",
-									"",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "bfd25d91-f01a-4fdd-987a-3465cc469e74",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n        \"id\": 0,\n        \"category\": {\n            \"id\": 85042688,\n            \"name\": \"dog\"\n        },\n        \"name\": \"{{$randomWord}}\",\n        \"photoUrls\": [\n            \"http://foo.bar.com/1\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 3896559439,\n                \"name\": \"blank\"\n            }\n        ],\n        \"status\": \"pending\"\n    }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://petstore.swagger.io/v2/pet"
-					},
-					"response": []
-				},
-				{
 					"name": "Find pets by status",
 					"event": [
 						{
@@ -122,6 +75,55 @@
 					"response": []
 				},
 				{
+					"name": "Add new pet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4061eb16-dc86-4cea-a67c-ada180cea357",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json()",
+									"console.log(jsonData.id)",
+									"pm.environment.set(\"petId\", jsonData.id);",
+									"pm.environment.set(\"petName\", jsonData.name);",
+									"",
+									"pm.test(\"Test for check id\", function () {",
+									"    pm.expect(jsonData.id).to.not.eql(\"0\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "bfd25d91-f01a-4fdd-987a-3465cc469e74",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": {{$randomInt}},\n        \"category\": {\n            \"id\": 85042688,\n            \"name\": \"dog\"\n        },\n        \"name\": \"{{$randomWord}}\",\n        \"photoUrls\": [\n            \"http://foo.bar.com/1\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 3896559439,\n                \"name\": \"blank\"\n            }\n        ],\n        \"status\": \"pending\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://petstore.swagger.io/v2/pet"
+					},
+					"response": []
+				},
+				{
 					"name": "Find Pets by ID",
 					"event": [
 						{
@@ -131,6 +133,14 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json()",
+									"pm.test(\"Test for check message\", function () {",
+									"    console.log(jsonData.id)",
+									"",
+									"    pm.expect(jsonData.type).to.not.eql(\"error\");",
+									"    pm.expect(jsonData.message).to.not.eql(\"Pet not found\");",
 									"});"
 								],
 								"type": "text/javascript",
@@ -171,6 +181,11 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Test for check pet name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.name).to.eql(\"PorkyDog\");",
 									"});"
 								],
 								"type": "text/javascript",
@@ -190,7 +205,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"id\": {{petId}},\n        \"category\": {\n            \"id\": 85042688,\n            \"name\": \"dog\"\n        },\n        \"name\": \"Porky\",\n        \"photoUrls\": [\n            \"http://foo.bar.com/1\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 3896559439,\n                \"name\": \"blank\"\n            }\n        ],\n        \"status\": \"pending\"\n    }",
+							"raw": "{\n        \"id\": {{petId}},\n        \"category\": {\n            \"id\": 85042688,\n            \"name\": \"dog\"\n        },\n        \"name\": \"PorkyDog\",\n        \"photoUrls\": [\n            \"http://foo.bar.com/1\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 3896559439,\n                \"name\": \"blank\"\n            }\n        ],\n        \"status\": \"pending\"\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -261,7 +276,7 @@
 								}
 							}
 						},
-						"url": "https://petstore.swagger.io/v2/pet/9223372036854663099"
+						"url": "https://petstore.swagger.io/v2/pet/{{petId}}"
 					},
 					"response": []
 				}
@@ -697,32 +712,22 @@
 			"name": "Store",
 			"item": [
 				{
-					"name": "Place an order for a pet",
-					"id": "976dd1d7-dfb8-4bac-99a7-1fdde7e77254",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"id\": 1111,\n  \"petId\": 12,\n  \"quantity\": 2,\n  \"shipDate\": \"2024-07-05T16:52:45.072Z\",\n  \"status\": \"placed\",\n  \"complete\": false\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://petstore.swagger.io/v2/store/order"
-					},
-					"response": []
-				},
-				{
 					"name": "Access to Petstore orders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "864c70cc-57ad-4209-b4dc-6dd30f02bddd",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "3be95250-a2d0-445e-b9d6-9535764b27dc",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -747,7 +752,80 @@
 					"response": []
 				},
 				{
+					"name": "Place an order for a pet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c48b40ea-7309-456e-b175-df1f2116fcd3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json()",
+									"console.log(jsonData.id)",
+									"pm.environment.set(\"orderId\", jsonData.id);",
+									"",
+									"pm.test(\"Test for check id is nil\", function () {",
+									"     pm.expect(jsonData).to.be.an('object');",
+									"     pm.expect(jsonData.id).to.not.null;",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "976dd1d7-dfb8-4bac-99a7-1fdde7e77254",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\":  {{$randomInt}},\n  \"petId\": 12,\n  \"quantity\": 2,\n  \"shipDate\": \"2024-07-05T16:52:45.072Z\",\n  \"status\": \"placed\",\n  \"complete\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://petstore.swagger.io/v2/store/order"
+					},
+					"response": []
+				},
+				{
 					"name": "Find purchase order by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "01175647-cebd-40fe-b269-2cece08f0cc1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json()",
+									"pm.test(\"Test for check message\", function () {",
+									"    console.log(jsonData.id)",
+									"",
+									"    pm.expect(jsonData.type).to.not.eql(\"error\");",
+									"    pm.expect(jsonData.message).to.not.eql(\"Pet not found\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "8eecbe94-684b-4234-aff9-961366af0287",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -767,12 +845,27 @@
 								}
 							}
 						},
-						"url": "https://petstore.swagger.io/v2/store/order/1111"
+						"url": "https://petstore.swagger.io/v2/store/order/{{orderId}}"
 					},
 					"response": []
 				},
 				{
 					"name": "Delete purchase order by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a0aaba9c-a73c-435b-af0d-3aa8328b1e8c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "4464af35-fe27-44fa-aa9d-8cb74d0ae2d4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -792,7 +885,7 @@
 								}
 							}
 						},
-						"url": "https://petstore.swagger.io/v2/store/order/1111"
+						"url": "https://petstore.swagger.io/v2/store/order/{{orderId}}"
 					},
 					"response": []
 				}
