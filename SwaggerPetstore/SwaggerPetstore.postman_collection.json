@@ -183,7 +183,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"id\": 9223372036854663099,\n        \"category\": {\n            \"id\": 85042688,\n            \"name\": \"dog\"\n        },\n        \"name\": \"Porky\",\n        \"photoUrls\": [\n            \"http://foo.bar.com/1\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 3896559439,\n                \"name\": \"blank\"\n            }\n        ],\n        \"status\": \"pending\"\n    }",
+							"raw": "{\n        \"id\": {{petId}},\n        \"category\": {\n            \"id\": 85042688,\n            \"name\": \"dog\"\n        },\n        \"name\": \"Porky\",\n        \"photoUrls\": [\n            \"http://foo.bar.com/1\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 3896559439,\n                \"name\": \"blank\"\n            }\n        ],\n        \"status\": \"pending\"\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
