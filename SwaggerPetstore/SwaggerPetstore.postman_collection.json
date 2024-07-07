@@ -319,7 +319,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"{{userName}}\",\n    \"firstName\": \"wwww2\",\n    \"lastName\": \"wwww2\",\n    \"email\": \"wwwww2@gmail.com\",\n    \"password\": \"qwertyyy\",\n    \"phone\": \"+25138384704\",\n    \"userStatus\": 0\n}",
+							"raw": "{\n    \"id\": {{usrId}},\n    \"username\": \"{{userName}}\",\n    \"firstName\": \"newFirstName\",\n    \"lastName\": \"newLastName\",\n    \"email\": \"tet@gmail.com\",\n    \"password\": \"ytrewq\",\n    \"phone\": \"+12345678900\",\n    \"userStatus\": 0\n}",
 							"options": {
 								"raw": {
 									"language": "json"
