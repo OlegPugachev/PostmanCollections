@@ -25,7 +25,6 @@
 									"});",
 									"",
 									"pm.test(\"Your test name\", function () {",
-									"    var jsonData = pm.response.json();",
 									"    pm.expect(jsonData.message).to.not.eql(\"0\");",
 									"});",
 									"",
@@ -200,8 +199,12 @@
 									"    pm.response.to.have.status(200);",
 									"});",
 									"",
-									"var jsonData = pm.response.json()",
-									"pm.expect(jsonData.firstName).to.eql(\"{{usrId}}\");"
+									"pm.test(\"Test for message equal to usrId\", function () {",
+									"     var responseJSON = pm.response.json();",
+									"     pm.expect(responseJSON.message).to.equal(pm.variables.get(\"usrId\"));",
+									"});",
+									"",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
