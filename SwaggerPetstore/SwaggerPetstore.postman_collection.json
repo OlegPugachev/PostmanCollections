@@ -247,7 +247,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"{{userName}}\",\n    \"firstName\": \"{{firstName}}\",\n    \"lastName\": \"{{lastName}}\",\n    \"email\": \"{{userName}}@gmail.com\",\n    \"password\": \"qwerty\",\n    \"phone\": \"+15138384704\",\n    \"userStatus\": 1\n}",
+							"raw": "{\n    \"username\": \"{{userName}}\",\n    \"firstName\": \"{{firstName}}\",\n    \"lastName\": \"{{lastName}}\",\n    // \"email\": \"{{userName}}@gmail.com\",\n    \"email\": \"{{$randomEmail}}\",\n    \"password\": \"qwerty\",\n    \"phone\": \"+15138384704\",\n    \"userStatus\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -272,7 +272,14 @@
 									"",
 									"pm.test(\"Response time is less than 200ms\", function () {",
 									"    pm.expect(pm.response.responseTime).to.be.below(200);",
-									"});"
+									"});",
+									"",
+									"pm.test(\"Test for hotmail domain in email\", function () {",
+									"     var responseData = pm.response.json();",
+									"",
+									"     pm.expect(responseData.email).to.include('@yopmail.com', \"Email should contain 'hotmail' domain\");",
+									"}); ",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -384,7 +391,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": {{usrId}},\n    \"username\": \"{{userName}}\",\n    \"firstName\": \"newFirstName\",\n    \"lastName\": \"newLastName\",\n    \"email\": \"tet@gmail.com\",\n    \"password\": \"ytrewq\",\n    \"phone\": \"+12345678900\",\n    \"userStatus\": 0\n}",
+							"raw": "{\n    \"id\": {{usrId}},\n    \"username\": \"{{userName}}\",\n    \"firstName\": \"newFirstName\",\n    \"lastName\": \"newLastName\",\n    \"email\": \"test@gmail.com\",\n    \"password\": \"ytrewq\",\n    \"phone\": \"+12345678900\",\n    \"userStatus\": 0\n}",
 							"options": {
 								"raw": {
 									"language": "json"
