@@ -391,7 +391,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": {{usrId}},\n    \"username\": \"{{userName}}\",\n    \"firstName\": \"newFirstName\",\n    \"lastName\": \"newLastName\",\n    \"email\": \"test@gmail.com\",\n    \"password\": \"ytrewq\",\n    \"phone\": \"+12345678900\",\n    \"userStatus\": 0\n}",
+							"raw": "{\n    \"id\": {{usrId}},\n    \"username\": \"{{userName}}\",\n    \"firstName\": \"newFirstName\",\n    \"lastName\": \"newLastName\",\n    \"email\": \"test@gmail.com\",\n    \"password\": \"ytrewq\",\n    \"phone\": \"+1-234-567-8900\",\n    \"userStatus\": 0\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -431,7 +431,20 @@
 									"     var firstName = jsonData.firstName;",
 									"    var regex = /[`!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?~]/",
 									"     pm.expect(regex.test(firstName)).to.equal(false);",
-									"});"
+									"});",
+									"",
+									"pm.test(\"Test for phone starting with +1\", function () {",
+									"     var responseData = pm.response.json();",
+									"     pm.expect(responseData.phone).to.match(/^(\\+1)/, \"Phone number should start with +1\");",
+									"});",
+									"",
+									"pm.test(\"Test for phone mask\", function () {",
+									"     var responseJSON = pm.response.json();",
+									"     pm.expect(responseJSON.phone).to.match(/^\\+\\d{1,3}-\\d{3}-\\d{3}-\\d{4}$/);",
+									"});",
+									"",
+									"",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
