@@ -6,180 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "Pet",
-			"item": [
-				{
-					"name": "Add new pet",
-					"id": "bfd25d91-f01a-4fdd-987a-3465cc469e74",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n        \"id\": 9223372036854663099,\n        \"category\": {\n            \"id\": 85042688,\n            \"name\": \"dog\"\n        },\n        \"name\": \"Spooky\",\n        \"photoUrls\": [\n            \"http://foo.bar.com/1\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 3896559439,\n                \"name\": \"blank\"\n            }\n        ],\n        \"status\": \"pending\"\n    }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://petstore.swagger.io/v2/pet"
-					},
-					"response": []
-				},
-				{
-					"name": "Find pets by status",
-					"id": "10d815da-5f3b-414b-9449-bce47f0d49df",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://petstore.swagger.io/v2/pet/findByStatus?status=pending",
-							"protocol": "https",
-							"host": [
-								"petstore",
-								"swagger",
-								"io"
-							],
-							"path": [
-								"v2",
-								"pet",
-								"findByStatus"
-							],
-							"query": [
-								{
-									"key": "status",
-									"value": "pending"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Find Pets by ID",
-					"id": "b4d3fd97-b52f-444f-91f4-dc80eeee8459",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://petstore.swagger.io/v2/pet/9223372036854663099"
-					},
-					"response": []
-				},
-				{
-					"name": "Update a pet",
-					"id": "020bbb71-7833-4834-8946-929774c6e3c5",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n        \"id\": 9223372036854663099,\n        \"category\": {\n            \"id\": 85042688,\n            \"name\": \"dog\"\n        },\n        \"name\": \"Porky\",\n        \"photoUrls\": [\n            \"http://foo.bar.com/1\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 3896559439,\n                \"name\": \"blank\"\n            }\n        ],\n        \"status\": \"pending\"\n    }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://petstore.swagger.io/v2/pet",
-							"protocol": "https",
-							"host": [
-								"petstore",
-								"swagger",
-								"io"
-							],
-							"path": [
-								"v2",
-								"pet"
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "Porky",
-									"disabled": true
-								},
-								{
-									"key": "status",
-									"value": "sold",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a pet",
-					"id": "cc527f6e-9b24-4027-bf33-f06edfe34294",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://petstore.swagger.io/v2/pet/9223372036854663099"
-					},
-					"response": []
-				}
-			],
-			"id": "a515e871-4af4-47c7-ade6-2fb6d1b9f277"
-		},
-		{
 			"name": "User",
 			"item": [
 				{
@@ -372,7 +198,10 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
-									"});"
+									"});",
+									"",
+									"var jsonData = pm.response.json()",
+									"pm.expect(jsonData.firstName).to.eql(\"{{usrId}}\");"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -587,6 +416,180 @@
 				}
 			],
 			"id": "ad5055ac-5852-4f38-8a9e-c72a61a5c533"
+		},
+		{
+			"name": "Pet",
+			"item": [
+				{
+					"name": "Add new pet",
+					"id": "bfd25d91-f01a-4fdd-987a-3465cc469e74",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 9223372036854663099,\n        \"category\": {\n            \"id\": 85042688,\n            \"name\": \"dog\"\n        },\n        \"name\": \"Spooky\",\n        \"photoUrls\": [\n            \"http://foo.bar.com/1\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 3896559439,\n                \"name\": \"blank\"\n            }\n        ],\n        \"status\": \"pending\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://petstore.swagger.io/v2/pet"
+					},
+					"response": []
+				},
+				{
+					"name": "Find pets by status",
+					"id": "10d815da-5f3b-414b-9449-bce47f0d49df",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet/findByStatus?status=pending",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pet",
+								"findByStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "pending"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Pets by ID",
+					"id": "b4d3fd97-b52f-444f-91f4-dc80eeee8459",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://petstore.swagger.io/v2/pet/9223372036854663099"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a pet",
+					"id": "020bbb71-7833-4834-8946-929774c6e3c5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 9223372036854663099,\n        \"category\": {\n            \"id\": 85042688,\n            \"name\": \"dog\"\n        },\n        \"name\": \"Porky\",\n        \"photoUrls\": [\n            \"http://foo.bar.com/1\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 3896559439,\n                \"name\": \"blank\"\n            }\n        ],\n        \"status\": \"pending\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pet"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Porky",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "sold",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a pet",
+					"id": "cc527f6e-9b24-4027-bf33-f06edfe34294",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://petstore.swagger.io/v2/pet/9223372036854663099"
+					},
+					"response": []
+				}
+			],
+			"id": "a515e871-4af4-47c7-ade6-2fb6d1b9f277"
 		},
 		{
 			"name": "Store",
