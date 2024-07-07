@@ -190,7 +190,9 @@
 							"script": {
 								"id": "75321775-2cfa-4b19-89ee-ff31b291a078",
 								"exec": [
-									""
+									"var jsonData = pm.response.json()",
+									"",
+									"pm.environment.set(\"usrId\", jsonData.message);"
 								],
 								"type": "text/javascript",
 								"packages": {}
