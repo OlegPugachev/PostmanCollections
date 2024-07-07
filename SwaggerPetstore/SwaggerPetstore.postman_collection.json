@@ -336,6 +336,21 @@
 				},
 				{
 					"name": "Check user after update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "212244b6-7db5-4741-914a-e385931a4924",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "d52d2021-58d9-4a3b-b051-c83e2e044b13",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -356,6 +371,21 @@
 				},
 				{
 					"name": "Logs out current logged in user session",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "490a1ff2-33e0-4894-8032-55f4cd7c12d8",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "20137969-76ae-423b-8d9e-0dc0be290b48",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -381,6 +411,22 @@
 				},
 				{
 					"name": "Delete user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bc092f4c-515e-4577-9e5e-8477eea3058b",
+								"exec": [
+									"",
+									"  pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "ed3e750e-49c3-4cc1-8469-e5ebf5eed93e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -393,7 +439,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\n  ",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -406,6 +452,21 @@
 				},
 				{
 					"name": "Check user after delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6adf5d0e-b1c8-4128-9eef-9f96d68ac1da",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "82055bd6-ddbe-4c9e-bfda-6f47f149731c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
