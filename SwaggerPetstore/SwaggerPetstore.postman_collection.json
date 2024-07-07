@@ -317,7 +317,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"{{userName}}\",\n    \"firstName\": \"{{firstName}}2\",\n    \"lastName\": \"{{lastName}}2\",\n    \"email\": \"{{userName}}2@gmail.com\",\n    \"password\": \"qwerty\",\n    \"phone\": \"+25138384704\",\n    \"userStatus\": 0\n}",
+							"raw": "{\n    \"username\": \"{{userName}}\",\n    \"firstName\": \"wwww2\",\n    \"lastName\": \"wwww2\",\n    \"email\": \"wwwww2@gmail.com\",\n    \"password\": \"qwertyyy\",\n    \"phone\": \"+25138384704\",\n    \"userStatus\": 0\n}",
 							"options": {
 								"raw": {
 									"language": "json"
