@@ -161,7 +161,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://petstore.swagger.io/v2/user/login?username={{userName}}&password=qwerty11",
+							"raw": "https://petstore.swagger.io/v2/user/login?username={{userName}}&password=qwerty",
 							"protocol": "https",
 							"host": [
 								"petstore",
@@ -180,7 +180,7 @@
 								},
 								{
 									"key": "password",
-									"value": "qwerty11"
+									"value": "qwerty"
 								}
 							]
 						}
@@ -311,6 +311,11 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Test for message equal to ok\", function () {",
+									"     var responseJSON = pm.response.json();",
+									"     pm.expect(responseJSON.message).to.equal(\"ok\");",
 									"});"
 								],
 								"type": "text/javascript",
@@ -352,6 +357,11 @@
 									"",
 									"  pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Test for message equal to usrId\", function () {",
+									"     var responseJSON = pm.response.json();",
+									"     pm.expect(responseJSON.message).to.equal(pm.variables.get(\"userName\"));",
 									"});"
 								],
 								"type": "text/javascript",
@@ -410,8 +420,8 @@
 						"method": "GET",
 						"header": [],
 						"body": {
-							"mode": "formdata",
-							"formdata": []
+							"mode": "raw",
+							"raw": ""
 						},
 						"url": "https://petstore.swagger.io/v2/user/{{userName}}"
 					},
