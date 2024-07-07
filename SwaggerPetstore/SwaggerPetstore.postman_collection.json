@@ -203,6 +203,11 @@
 									"    pm.expect(jsonData.message).to.not.eql(\"0\");",
 									"});",
 									"",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"",
+									"",
 									""
 								],
 								"type": "text/javascript",
@@ -255,6 +260,25 @@
 				},
 				{
 					"name": "Get user by user name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5db4d522-edca-4acb-a8be-6bab46d04841",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "636c0320-22ca-470d-b026-cc28440078f3",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -275,6 +299,21 @@
 				},
 				{
 					"name": "Logs user into the system",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "34b45025-3ca3-4e1c-8d28-4d1a4c1ad9bd",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "c5b8ba9e-8013-4481-b52d-f86e970d32a4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -290,7 +329,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://petstore.swagger.io/v2/user/login?username={{userName}}&password=qwerty",
+							"raw": "https://petstore.swagger.io/v2/user/login?username={{userName}}&password=qwerty11",
 							"protocol": "https",
 							"host": [
 								"petstore",
@@ -309,7 +348,7 @@
 								},
 								{
 									"key": "password",
-									"value": "qwerty"
+									"value": "qwerty11"
 								}
 							]
 						}
@@ -318,6 +357,21 @@
 				},
 				{
 					"name": "Update user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cfcdfd3d-d8c5-4588-806d-96d132654711",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "abb4ee82-bedb-4fef-b058-b84899e96480",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -351,7 +405,8 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
-									"});"
+									"});",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
