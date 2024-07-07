@@ -377,10 +377,10 @@
 									"    pm.expect(pm.response.responseTime).to.be.below(200);",
 									"});",
 									"",
-									"pm.test(\"Test for hotmail domain in email\", function () {",
+									"pm.test(\"Test for yopmail domain in email\", function () {",
 									"     var responseData = pm.response.json();",
 									"",
-									"     pm.expect(responseData.email).to.include('@yopmail.com', \"Email should contain 'hotmail' domain\");",
+									"     pm.expect(responseData.email).to.include('@yopmail.com', \"Email should contain 'yopmail' domain\");",
 									"}); ",
 									""
 								],
