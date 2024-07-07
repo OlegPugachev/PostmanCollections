@@ -209,6 +209,28 @@
 				},
 				{
 					"name": "Create user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "75321775-2cfa-4b19-89ee-ff31b291a078",
+								"exec": [
+									"  var firstName = pm.variables.replaceIn(\"{{$randomFirstName}}\");",
+									"pm.variables.set(\"firstName\",firstName)",
+									"",
+									"var lastName = pm.variables.replaceIn(\"{{$randomLastName}}\"); ",
+									"pm.variables.set(\"lastName\",lastName)",
+									"",
+									"var userName = firstName + lastName",
+									"pm.environment.set(\"userName\", userName);",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "68bf6897-0980-4d8b-9b71-06295174dedb",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -221,7 +243,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"username\": \"HarryPotter\",\n    \"firstName\": \"Harry\",\n    \"lastName\": \"Potter\",\n    \"email\": \"potter@gmail.com\",\n    \"password\": \"qwerty\",\n    \"phone\": \"+15138384704\",\n    \"userStatus\": 1\n}\n  ",
+							"raw": "{\n    \"username\": \"{{userName}}\",\n    \"firstName\": \"{{firstName}}\",\n    \"lastName\": \"{{lastName}}\",\n    \"email\": \"{{userName}}@gmail.com\",\n    \"password\": \"qwerty\",\n    \"phone\": \"+15138384704\",\n    \"userStatus\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
