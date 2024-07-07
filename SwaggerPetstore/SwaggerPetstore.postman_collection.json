@@ -317,7 +317,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"username\": \"HarryPotter\",\n    \"firstName\": \"Harry2\",\n    \"lastName\": \"Potter2\",\n    \"email\": \"harry@gmail.com\",\n    \"password\": \"qwerty\",\n    \"phone\": \"+15138384705\",\n    \"userStatus\": 0\n}",
+							"raw": "{\n    \"username\": \"{{userName}}\",\n    \"firstName\": \"{{firstName}}2\",\n    \"lastName\": \"{{lastName}}2\",\n    \"email\": \"{{userName}}2@gmail.com\",\n    \"password\": \"qwerty\",\n    \"phone\": \"+25138384704\",\n    \"userStatus\": 0\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -361,8 +361,13 @@
 						"method": "GET",
 						"header": [],
 						"body": {
-							"mode": "formdata",
-							"formdata": []
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": "https://petstore.swagger.io/v2/user/logout"
 					},
