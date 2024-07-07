@@ -280,7 +280,7 @@
 									"    pm.response.to.have.status(200);",
 									"});",
 									"",
-									"pm.test(\"Your test name\", function () {",
+									"pm.test(\"Test for check message\", function () {",
 									"    pm.expect(jsonData.message).to.not.eql(\"0\");",
 									"});",
 									"",
