@@ -270,7 +270,7 @@
 							"mode": "formdata",
 							"formdata": []
 						},
-						"url": "https://petstore.swagger.io/v2/user/HarryPotter"
+						"url": "https://petstore.swagger.io/v2/user/{{userName}}"
 					},
 					"response": []
 				},
@@ -339,7 +339,7 @@
 								}
 							}
 						},
-						"url": "https://petstore.swagger.io/v2/user/HarryPotter"
+						"url": "https://petstore.swagger.io/v2/user/{{userName}}"
 					},
 					"response": []
 				},
@@ -359,7 +359,7 @@
 							"mode": "formdata",
 							"formdata": []
 						},
-						"url": "https://petstore.swagger.io/v2/user/HarryPotter"
+						"url": "https://petstore.swagger.io/v2/user/{{userName}}"
 					},
 					"response": []
 				},
@@ -404,7 +404,7 @@
 								}
 							}
 						},
-						"url": "https://petstore.swagger.io/v2/user/HarryPotter"
+						"url": "https://petstore.swagger.io/v2/user/{{userName}}"
 					},
 					"response": []
 				}
