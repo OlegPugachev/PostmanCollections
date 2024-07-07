@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "709bab6b-97f1-4401-8909-bbfde357fb92",
+		"_postman_id": "78a033a3-1b22-495d-8681-fa02143c89e0",
 		"name": "SwaggerPetstore",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -10,7 +10,7 @@
 			"item": [
 				{
 					"name": "Add new pet",
-					"id": "0a8fed2b-5395-4e9d-adbb-389a1f310f1c",
+					"id": "bfd25d91-f01a-4fdd-987a-3465cc469e74",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -35,7 +35,7 @@
 				},
 				{
 					"name": "Find pets by status",
-					"id": "e3109a42-19f1-4bf0-a3c7-09de45936bec",
+					"id": "10d815da-5f3b-414b-9449-bce47f0d49df",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -79,7 +79,7 @@
 				},
 				{
 					"name": "Find Pets by ID",
-					"id": "6ef82d07-5266-4edc-9c1e-bd509d4cf01f",
+					"id": "b4d3fd97-b52f-444f-91f4-dc80eeee8459",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -104,7 +104,7 @@
 				},
 				{
 					"name": "Update a pet",
-					"id": "3f59858d-ad72-460e-a18e-a44ce4b14ade",
+					"id": "020bbb71-7833-4834-8946-929774c6e3c5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -153,7 +153,7 @@
 				},
 				{
 					"name": "Delete a pet",
-					"id": "7fc9076e-5bd4-4008-9d92-19e5d9229d9c",
+					"id": "cc527f6e-9b24-4027-bf33-f06edfe34294",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -177,14 +177,14 @@
 					"response": []
 				}
 			],
-			"id": "5537d290-4bf4-48f3-9fff-5980feb12779"
+			"id": "a515e871-4af4-47c7-ade6-2fb6d1b9f277"
 		},
 		{
 			"name": "User",
 			"item": [
 				{
 					"name": "Create user list",
-					"id": "b44ff97e-b711-4485-a1ce-c377108c542e",
+					"id": "3e0cf0d9-825d-43cb-b737-b876c0ec3bb5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -209,7 +209,7 @@
 				},
 				{
 					"name": "Create user",
-					"id": "af2bede9-8936-46ae-ba93-c27c87ca516c",
+					"id": "68bf6897-0980-4d8b-9b71-06295174dedb",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -234,7 +234,7 @@
 				},
 				{
 					"name": "Get user by user name",
-					"id": "4db1c87a-4194-4a1c-b6c7-f7dc15954ab9",
+					"id": "636c0320-22ca-470d-b026-cc28440078f3",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -254,7 +254,7 @@
 				},
 				{
 					"name": "Logs user into the system",
-					"id": "302ad758-275e-4eea-a8dc-be877b626964",
+					"id": "c5b8ba9e-8013-4481-b52d-f86e970d32a4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -298,7 +298,7 @@
 				},
 				{
 					"name": "Update user",
-					"id": "2b3eeaf3-f362-46e5-ab27-62b97ea6e61e",
+					"id": "abb4ee82-bedb-4fef-b058-b84899e96480",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -323,7 +323,7 @@
 				},
 				{
 					"name": "Check user after update",
-					"id": "f01b4992-df38-43a1-b865-558cc3e19b73",
+					"id": "d52d2021-58d9-4a3b-b051-c83e2e044b13",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -343,7 +343,7 @@
 				},
 				{
 					"name": "Logs out current logged in user session",
-					"id": "50cc8436-ccc9-429c-afc3-a15e85f80fd0",
+					"id": "20137969-76ae-423b-8d9e-0dc0be290b48",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -363,7 +363,7 @@
 				},
 				{
 					"name": "Delete user",
-					"id": "bc396ac7-9b98-460a-b9b3-f3cd5e223c5e",
+					"id": "ed3e750e-49c3-4cc1-8469-e5ebf5eed93e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -387,14 +387,14 @@
 					"response": []
 				}
 			],
-			"id": "9914d3bf-2a52-48c2-b691-a7deecddaaf6"
+			"id": "ad5055ac-5852-4f38-8a9e-c72a61a5c533"
 		},
 		{
 			"name": "Store",
 			"item": [
 				{
 					"name": "Place an order for a pet",
-					"id": "731bab23-820b-4ff6-b795-32c7b06f253b",
+					"id": "976dd1d7-dfb8-4bac-99a7-1fdde7e77254",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -419,7 +419,7 @@
 				},
 				{
 					"name": "Access to Petstore orders",
-					"id": "e22a579c-5201-478a-abc3-4479d3a3b657",
+					"id": "3be95250-a2d0-445e-b9d6-9535764b27dc",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -444,7 +444,7 @@
 				},
 				{
 					"name": "Find purchase order by ID",
-					"id": "71852120-6889-4f9f-baa9-38efac9ecd10",
+					"id": "8eecbe94-684b-4234-aff9-961366af0287",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -469,7 +469,7 @@
 				},
 				{
 					"name": "Delete purchase order by ID",
-					"id": "b65c09e5-515e-4997-8a0b-4514d5f9a494",
+					"id": "4464af35-fe27-44fa-aa9d-8cb74d0ae2d4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -493,7 +493,7 @@
 					"response": []
 				}
 			],
-			"id": "ea10d5e9-43df-4990-9dfd-d2952e5d4424"
+			"id": "50f263d2-430e-4607-9acd-8ba4b7f261ab"
 		}
 	]
 }
