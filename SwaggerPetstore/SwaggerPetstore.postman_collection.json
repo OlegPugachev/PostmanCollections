@@ -277,7 +277,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://petstore.swagger.io/v2/user/login?username=HarryPotter&password=qwerty",
+							"raw": "https://petstore.swagger.io/v2/user/login?username={{userName}}&password=qwerty",
 							"protocol": "https",
 							"host": [
 								"petstore",
@@ -292,12 +292,11 @@
 							"query": [
 								{
 									"key": "username",
-									"value": "HarryPotter"
+									"value": "{{userName}}"
 								},
 								{
 									"key": "password",
-									"value": "qwerty",
-									"type": "text"
+									"value": "qwerty"
 								}
 							]
 						}
@@ -383,7 +382,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"username\": \"HarryPotter2\",\n    \"firstName\": \"Harry\",\n    \"lastName\": \"Potter\",\n    \"email\": \"potter@gmail.com\",\n    \"password\": \"qwerty\",\n    \"phone\": \"+15138384704\",\n    \"userStatus\": 1\n}\n  ",
+							"raw": "\n  ",
 							"options": {
 								"raw": {
 									"language": "json"
